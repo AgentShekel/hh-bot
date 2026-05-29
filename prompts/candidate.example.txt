@@ -1,0 +1,81 @@
+# Candidate prompt template
+#
+# How to use:
+#   1. Copy this file to prompts/candidate.txt (or just rename it).
+#   2. Fill in the sections below with YOUR actual data.
+#   3. The bot will read prompts/candidate.txt for cover letter generation.
+#
+# Why two files:
+#   - prompts/candidate.example.txt is committed to the public repo
+#     (this is what new clones see).
+#   - prompts/candidate.txt is gitignored, contains your real data,
+#     never leaves your machine.
+#
+# Lines starting with `#` are comments — keep them or remove, doesn't matter.
+
+[YOUR_NAME], [your role positioning, e.g. "Senior Product Manager" or "Backend
+Engineer with ML focus"]. [Brief years-in-industry + key specialisation, e.g.
+"N years in IT, last M in <your area>"].
+
+
+[PRODUCT_1_DESCRIPTION_WITHOUT_BRAND]
+Describe what it does, who uses it, what stack runs underneath, how it's
+deployed. The LLM will use this to draft body of cover letters that bind your
+work to the job description.
+
+Production metrics (only what you can prove on the interview):
+- Scale: [e.g. requests per month, users in active use, clients in production]
+- Stack: [tech stack]
+- Delivery models: [SaaS, on-premise, embedded, etc.]
+- Optional: link to public case-study repo
+
+
+[PRODUCT_2_DESCRIPTION_WITHOUT_BRAND]
+Same as product 1 above.
+
+
+# Other verifiable facts (used as technical proof points)
+# Only include numbers you can show on the interview. The LLM may pull these
+# into the letter when relevant to the vacancy.
+
+- [Adoption / coverage metric: e.g. team-wide AI adoption since DATE]
+- [Time-to-X improvement: e.g. delivery time cut from N to M]
+- [Process metric: e.g. coverage of tooling went from 0 to 100% over period]
+- [Business outcome: e.g. revenue / margin growth over period, average-check
+  growth, etc. — relative percentages are safer than absolute numbers]
+
+
+# What you do NOT have (anti-fabrication list)
+# The LLM is instructed to NEVER claim experience you don't have. Listing it
+# here keeps it from making things up.
+
+- [Domain 1 you have no commercial experience in: e.g. Web3 / blockchain]
+- [Domain 2: e.g. mobile iOS/Android]
+- [Domain 3: e.g. ML research / paper publications]
+- [Specific tech you haven't shipped: e.g. vector DBs, RAG, fine-tuning]
+
+
+# Good opening samples (3-5 different vacancy types)
+# These are concrete examples the LLM uses as style reference. They should
+# match your real products and tone.
+
+OPENING SAMPLE — AI/LLM-heavy vacancy:
+"[Sample opening starting with a fact about your work, e.g. 'My LLM-powered
+service in production is built exactly around this: ...']"
+
+OPENING SAMPLE — Product/Project Manager (no AI focus):
+"[Sample]"
+
+OPENING SAMPLE — engineering role (low priority):
+"[Sample]"
+
+OPENING SAMPLE — vacancy with explicit instruction:
+"[Sample]"
+
+
+# Decision tree (which product fits which vacancy type)
+# Helps the LLM pick the right portfolio item to anchor the letter on.
+
+- If vacancy is about [domain 1] → reference PRODUCT_1
+- If vacancy is about [domain 2] → reference PRODUCT_2
+- If vacancy is generic PM → emphasise the "PM who codes" angle

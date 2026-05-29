@@ -1,0 +1,10 @@
+aiogram>=3.26.0
+playwright>=1.58.0
+httpx[socks]>=0.27
+PyJWT>=2.8
+python-dotenv>=1.0.1
+pyyaml>=6.0
+# Telegram channels are read via the public web mirror (t.me/s/<channel>):
+# aiohttp fetches the page, beautifulsoup4 parses it. No Telethon / api keys.
+aiohttp>=3.9
+beautifulsoup4>=4.12

@@ -1,0 +1,63 @@
+# Telegram channels to scan for vacancies.
+#
+# Fields:
+#   username     — channel @handle without the @ sign. Required.
+#   enabled      — set to false to skip without removing the entry. Default: true.
+#   role_filter  — list of lowercase keywords. A post must mention at least
+#                  one of them to pass the pre-filter (substring match,
+#                  case-insensitive). Empty list = accept everything,
+#                  let the LLM decide.
+#   note         — free-text reminder of what this channel is for.
+#
+# Tuning rule of thumb:
+#   - High-volume channels (>50 posts/day) — narrow role_filter.
+#   - Niche channels (<10 posts/day) — leave role_filter empty.
+#   - When you find a noisy channel, ADD keywords to its filter,
+#     don't disable it outright.
+
+channels:
+  # === Primary AI/LLM/Python feeds ===
+  - username: datasciencejobs
+    enabled: true
+    role_filter: [ai, llm, ml, product, lead, head, manager, python]
+    note: "DS/ML jobs feed, mid-to-high volume"
+
+  - username: ai_machinelearning_big_data
+    enabled: true
+    role_filter: [vacanc, hiring, hire, looking, нанимаем, ищем]
+    note: "Mostly news, occasional vacancies — filter aggressively"
+
+  - username: prog_jobs
+    enabled: true
+    role_filter: [python, llm, ai, product, lead, head, manager]
+    note: "Generic prog jobs, narrow with stack keywords"
+
+  - username: workinai
+    enabled: true
+    role_filter: []
+    note: "AI-focused — let LLM decide on every post"
+
+  # === Remote-focused ===
+  - username: remote_ru
+    enabled: true
+    role_filter: [ai, llm, ml, python, product manager, project manager, head, lead]
+    note: "Russian-speaking remote jobs, broad — narrow by role"
+
+  - username: itjobsforyou
+    enabled: true
+    role_filter: [ai, ml, python, llm, product, lead, head]
+    note: "Generic IT, narrow by stack + level"
+
+  - username: russiantechjobs
+    enabled: true
+    role_filter: [ai, llm, ml, python, product, remote, lead, head, manager]
+    note: "RU tech jobs, mixed signal"
+
+  # === Add more channels here as you find them.
+  # Examples to consider (uncomment and verify the username exists):
+  # - username: machinelearning_jobs
+  #   role_filter: [ai, llm, ml]
+  # - username: pythonworld_jobs
+  #   role_filter: [python, ai, llm]
+  # - username: forsenior
+  #   role_filter: [ai, llm, lead, head, manager]

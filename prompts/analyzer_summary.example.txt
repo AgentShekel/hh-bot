@@ -1,0 +1,21 @@
+# Short candidate summary used by the relevance analyzer.
+#
+# Copy this file to prompts/analyzer_summary.txt and fill in your data.
+# This file is committed; prompts/analyzer_summary.txt is gitignored.
+#
+# Keep this SHORT — 2-4 paragraphs max. It is sent to the LLM with every
+# vacancy to compute a 0-100 relevance score, so brevity = lower token cost.
+
+[YOUR_NAME], [your role positioning, e.g. "Senior Product Manager" or "Backend
+Engineer with ML focus"]. [Brief years and specialisation, e.g. "N years in IT,
+last M in <your area>"].
+
+Two production LLM products end-to-end (own architecture and code):
+- [PRODUCT_1 brief: what + scale + stack]
+- [PRODUCT_2 brief: what + stack]
+
+[Other proof points: AI adoption in your team, delivery time improvement,
+revenue/margin growth, etc. — anything you can defend on the interview.]
+
+Target roles: [list your target titles].
+Format: [remote-only / hybrid OK / etc.]

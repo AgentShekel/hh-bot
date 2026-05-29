@@ -1,0 +1,92 @@
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+secrets/
+
+# Cookies / sessions
+hh_cookies.json
+*cookies*.json
+*session*.json
+state.json
+
+# Logs
+*.log
+logs/
+
+# Database / data dir — ignore everything except the committed example config
+data/*
+!data/tg_channels.example.yaml
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Resumes / personal docs
+resume*.txt
+resume*.pdf
+resume*.docx
+*.pdf
+
+# Personal candidate prompt — keep your real data local, only the
+# .example.txt templates are committed to the public repo.
+prompts/candidate.txt
+prompts/analyzer_summary.txt
+prompts/*.local.txt
+
+# LinkedIn drafts and other personal markdown
+linkedin-*.md
+linkedin-profile.md
+
+# Screenshots / debug artifacts
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Stray dumps
+*_decrypted.json
+*_test.json
+*_test.txt
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+.python-version
+
+# Playwright
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# IDE / editors
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Project-internal docs / planning — never ship to the public repo
+audit/
+next-steps*.md
+roadmap*.md
+*ROADMAP*.md
+*_SETUP.md
+.claude/
